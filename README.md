@@ -1,4 +1,3 @@
-# wh.im app template
 # 早押しクイズゲーム
 
 ## 概要
