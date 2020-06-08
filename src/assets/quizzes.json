@@ -1,0 +1,292 @@
+{
+  "quizzes": [
+    {
+      "question": "日本で二番目に高い山は？",
+      "answer": "北岳",
+      "incorrectAnswers": [
+        "富士山", "雲仙岳",	"槍ヶ岳"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "KABA.ちゃんの嫌いな食べ物は？",
+      "answer": "豚肉",
+      "incorrectAnswers": [
+        "牛肉", "カバ肉",	"鶏肉"
+      ],
+      "genre":"Gourmet"
+    },
+    {
+      "question": "チャイコフスキーの3大バレエ組曲は「くるみ割り人形」「白鳥の湖」と何？",
+      "answer": "「眠れる森の美女」",
+      "incorrectAnswers": [
+        "「シンデレラ」", "「美女と野獣」",	"「白雪姫」"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "漢字能力検定協会が毎年「今年の漢字」を発表する寺といえば？",
+      "answer": "清水寺",
+      "incorrectAnswers": [
+        "長谷寺", "金閣寺",	"漢字寺"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "野ねずみが主人公の絵本のタイトルといえば？",
+      "answer": "ぐりとぐら",
+      "incorrectAnswers": [
+        "スイミー", "はらぺこあおむし",	"百万回生きたねこ"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "ケチャップの消費量が世界一の国といえば？",
+      "answer": "アメリカ",
+      "incorrectAnswers": [
+        "中国", "フランス",	"イギリス"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "次のうち、レオナルド・ダ・ヴィンチによるものではないものは？",
+      "answer": "ヴィーナスの誕生",
+      "incorrectAnswers": [
+        "モナ・リザ", "ウィトルウィウス的人体図",	"最後の晩餐"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "哺乳綱食肉目ネコ科ヒョウ属に属する動物・ライオンの別名は？",
+      "answer": "獅子",
+      "incorrectAnswers": [
+        "麒麟", "狒狒",	"駱駝"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "次のうち七草ではないものは？",
+      "answer": "パセリ",
+      "incorrectAnswers": [
+        "セリ", "ナズナ",	"すずな"
+      ],
+      "genre":"Gourmet"
+    },
+    {
+      "question": "次のうち常用漢字に入っていないものは？",
+      "answer": "勺",
+      "incorrectAnswers": [
+        "中", "乞",	"呂"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "ハンドボールはひとチーム何人のスポーツ？",
+      "answer": "7",
+      "incorrectAnswers": [
+        "5", "6",	"8"
+      ],
+      "genre":"Sports"
+    },
+    {
+      "question": "イエズス会の宣教師であるフランシスコ・ザビエルが日本にきたとき最初に上陸したのは？",
+      "answer": "鹿児島",
+      "incorrectAnswers": [
+        "横浜", "函館",	"下関"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "日本人として初めて新婚旅行をしたと言われているのは次のうち誰？",
+      "answer": "坂本龍馬",
+      "incorrectAnswers": [
+        "西郷隆盛", "聖徳太子",	"織田信長"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "くじ引きで選ばれたことで有名な室町時代の将軍といえば？",
+      "answer": "足利義教",
+      "incorrectAnswers": [
+        "足利義昭", "足利義政",	"足利尊氏"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "新幹線の線路の歪みや架線の状況などを検査しながら走る事業用車両の愛称といえば？",
+      "answer": "ドクターイエロー",
+      "incorrectAnswers": [
+        "ドクターエックス", "ドクター中松",	"ドクタードリトル"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "次のうちホンダの車はどれ？",
+      "answer": "アコード",
+      "incorrectAnswers": [
+        "ロードスター", "クラウン",	"ハスラー"
+      ],
+      "genre":"Trivia"
+    },
+    {
+      "question": "ヨットを英語で書くと？",
+      "answer": "yacht",
+      "incorrectAnswers": [
+        "yott", "jot",	"yaut"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "組曲「展覧会の絵」は誰の作曲？",
+      "answer": "ムソルグスキー",
+      "incorrectAnswers": [
+        "ブラームス", "チャイコフスキー",	"ラフマニノフ"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "「ワルツ」は三拍子ですが、「メヌエット」は何拍子？",
+      "answer": "三拍子",
+      "incorrectAnswers": [
+        "二拍子", "四拍子",	"五拍子"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "カバの噛む力は何キロ？",
+      "answer": "1,000kg",
+      "incorrectAnswers": [
+        "100kg", "10kg",	"10,000kg"
+      ],
+      "genre":"Science"
+    },
+    {
+      "question": "カーディガンの名前の由来は？",
+      "answer": "カーディガン伯爵が考案",
+      "incorrectAnswers": [
+        "カーディガン地方発祥", "カーディガン物語に登場",	"フランス語で「布」"
+      ],
+      "genre":"Trivia"
+    },
+    {
+      "question": "ガラパゴス諸島はどこの国？",
+      "answer": "コロンビア",
+      "incorrectAnswers": [
+        "エクアドル", "インド",	"イギリス"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "ファッション雑誌「an・an」の名前の由来は？",
+      "answer": "人気のパンダの名前から",
+      "incorrectAnswers": [
+        "案...案...と迷っていた時の閃き", "編集長がアンパン好き",	"another anata（違うあなた）の略"
+      ],
+      "genre":"Entertainment"
+    },
+    {
+      "question": "参議院農林水産委員会で出てくる飲み物は？",
+      "answer": "牛乳",
+      "incorrectAnswers": [
+        "オレンジジュース", "テキーラ",	"レッドブル"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "日本人で初めてルイヴィトンのバッグを買ったのは誰？",
+      "answer": "板垣退助",
+      "incorrectAnswers": [
+        "岩倉具視", "森鴎外",	"夏目漱石"
+      ],
+      "genre":"Litereture"
+    },
+    {
+      "question": "カルパッチョという料理の由来は？",
+      "answer": "カルパッチョ伯爵から",
+      "incorrectAnswers": [
+        "カルパッチョ地方から", "軽くパッとちょっと作れるから",	"カルパッチョの予言"
+      ],
+      "genre":"Gourmet"
+    },
+    {
+      "question": "ラーメンの丼に見られるうずまきは何を表している？",
+      "answer": "雷",
+      "incorrectAnswers": [
+        "推奨される食べ方", "海",	"煩悩"
+      ],
+      "genre":"Gourmet"
+    },
+    {
+      "question": "かぼちゃという野菜の名前の由来は？",
+      "answer": "カンボジア",
+      "incorrectAnswers": [
+        "水に落とした時の音", "噛んだ時の音",	"インドネシア語"
+      ],
+      "genre":"Gourmet"
+    },
+    {
+      "question": "「蛍の光」の元になった曲は？",
+      "answer": "スコットランド民謡",
+      "incorrectAnswers": [
+        "瀧廉太郎が作曲", "鹿児島の民謡",	"第5回紅白歌合戦のテーマ曲"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "一富士二鷹三茄子。四は？",
+      "answer": "扇",
+      "incorrectAnswers": [
+        "衣", "餅",	"レモン"
+      ],
+      "genre":"Literature"
+    },
+    {
+      "question": "オリンピックの金メダルの主要な素材は？",
+      "answer": "銀",
+      "incorrectAnswers": [
+        "金", "銅",	"プラチナ"
+      ],
+      "genre":"Sports"
+    },
+    {
+      "question": "野球で言う「重い球」はどんな球？",
+      "answer": "回転数が少ない",
+      "incorrectAnswers": [
+        "スピードが速い", "回転数が多い", "スピードが遅い"
+      ],
+      "genre":"Sports"
+    },
+    {
+      "question": "アメリカの自由の女神を寄贈したのはどこの国？",
+      "answer": "フランス",
+      "incorrectAnswers": [
+        "インド", "ロシア",	"イタリア"
+      ],
+      "genre":"Humanities"
+    },
+    {
+      "question": "キリンは1日にどのくらい睡眠する？",
+      "answer": "20分",
+      "incorrectAnswers": [
+        "2時間", "12時間","20時間"
+      ],
+      "genre":"Science"
+    },
+    {
+      "question": "カタツムリはなぜコンクリートの上にいる？",
+      "answer": "コンクリートを食べるため",
+      "incorrectAnswers": [
+        "外敵から身を守るため", "余分な水分を乾かすため",	"体温を下げるため"
+      ],
+      "genre":"Science"
+    },
+    {
+      "question": "大根役者を英語で言うと？",
+      "answer": "ハム役者",
+      "incorrectAnswers": [
+        "ラディッシュ役者", "ステーキ役者",	"トイレ役者"
+      ],
+      "genre":"Literature"
+    }
+  ]
+}
