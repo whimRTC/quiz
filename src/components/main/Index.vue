@@ -222,7 +222,7 @@ export default {
         return;
       }
       this.sendSound("question");
-      const idx = state.quizIndices[nextNo];
+      const idx = state.quizIndices[nextNo - 1];
       const quiz = QUIZZES[idx];
       const [choices, answerIdx] = shuffleChoices(quiz);
       this.$whim.assignState({
