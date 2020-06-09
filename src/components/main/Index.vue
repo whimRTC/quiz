@@ -217,7 +217,7 @@ export default {
     nextQuiz() {
       const state = this.state;
       const nextNo = this.$whim.state.quizNo + 1;
-      if (state.quizNo > state.nQuizzes) {
+      if (nextNo > state.nQuizzes) {
         this.end();
         return;
       }
