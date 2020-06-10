@@ -278,7 +278,7 @@ export default {
         default:
           return;
       }
-      s.volume(0.4);
+      s.volume(0.2);
       s.play();
       this.$whim.assignState({
         sound: null
