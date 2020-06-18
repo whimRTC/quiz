@@ -248,7 +248,7 @@ export default {
     },
     reset() {
       const nQuizzes = this.$whim.state.nQuizzes;
-      this.$whim.assignState({
+      this.$whim.resetState({
         phase: "setting",
         nQuizzes: nQuizzes
       });
