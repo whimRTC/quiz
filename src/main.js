@@ -9,9 +9,9 @@ import "./assets/main.scss";
 
 // wh.imの開発時に用いるの設定
 let targetOrigin;
-if (window.location.search === "?env=dev") {
+if ((new URL(window.location)).searchParams.get("env") === "dev") {
   targetOrigin = "https://localhost:3000";
-} else if (window.location.search === "?env=stg") {
+} else if ((new URL(window.location)).searchParams.get("env") === "stg") {
   targetOrigin = "https://stg.wh.im";
 } else {
   targetOrigin = "https://wh.im";
