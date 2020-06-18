@@ -7,16 +7,14 @@ wh.im上で遊べる 早押しクイズゲームのソースコードです。
 (魔改造して、whimに登録しても大丈夫ですw)
 
 ## 使い方
-クローンし、remoteを変更します
-## gitのクローン
+
+### gitのクローン
 ``` 
-git clone git@github.com:sally-inc/whim-template.git {app_name}
-cd {app_name}
-git remote set-url origin {your_url}
 git clone git@github.com:whimRTC/quiz.git
+cd quiz
 ```
 
-## 起動
+### 起動
 ``` 
 yarn
 yarn serve
