@@ -1,5 +1,5 @@
 # 早押しクイズゲーム
-
+![Deploy](https://github.com/whimRTC/quiz/workflows/Deploy/badge.svg)
 ## 概要
 wh.im上でアプリを動かすときのVue.jsによるテンプレートです。
 wh.im上で遊べる 早押しクイズゲームのソースコードです。
