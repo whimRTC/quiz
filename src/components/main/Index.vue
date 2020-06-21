@@ -18,7 +18,9 @@
       </div>
       <div v-else-if="phase === 'playing'">
         <div class="card">
-          <div v-if="!quizAnswered">残り{{ Math.ceil(timeLeft) }}秒</div>
+          <div v-if="!quizAnswered && timeLeft < TIME_LIMIT">
+            残り{{ Math.ceil(timeLeft) }}秒
+          </div>
           <div>{{ state.quizNo }}/{{ state.nQuizzes }}</div>
           <div>{{ question }}</div>
           <div v-if="quizAnswered">答え: {{ answer }}</div>
@@ -57,7 +59,8 @@ import { shuffle, shuffleChoices } from "../../utils/shuffle";
 import { Howl } from "howler";
 
 const QUIZZES = require("@/assets/quizzes.json").quizzes;
-const TIME_LIMIT = 15;
+const TIME_LIMIT = 10;
+const SEC_PER_LETTER = 0.25;
 const SE_CORRECT = new Howl({
   src: require("@/assets/correct1.mp3")
 });
@@ -78,7 +81,8 @@ export default {
       nQuizzes: 10,
       nQuizzesChoices: [5, 10, 20],
       now: new Date().getTime(),
-      timeBegin: undefined
+      timeBegin: undefined,
+      TIME_LIMIT
     };
   },
   components: {
@@ -118,7 +122,7 @@ export default {
     },
     timeLeft() {
       const timeBegin = this.state.timeBegin;
-      if (timeBegin === undefined) return undefined;
+      if (timeBegin === undefined || this.state.quizAnswered) return undefined;
       const between = this.now - timeBegin;
       const t = TIME_LIMIT - between / 1000;
       if (t <= 0) {
@@ -135,8 +139,8 @@ export default {
     question() {
       const q = this.state.question;
       if (this.state.quizAnswered) return q;
-      const ratio = 1 - this.timeLeftRatio;
-      return q.slice(0, Math.ceil(ratio * q.length * 3));
+      const nLetters = Math.ceil((this.timeLeft - TIME_LIMIT) / SEC_PER_LETTER);
+      return q.slice(0, q.length - nLetters);
     },
     champion() {
       let champ,
@@ -175,9 +179,12 @@ export default {
         phase: "playing",
         question: quiz.question,
         answerIdx: answerIdx,
-        choices: choices,
-        timeBegin: new Date().getTime(),
-        quizAnswered: false
+        choices,
+        timeBegin:
+          new Date().getTime() + quiz.question.length * SEC_PER_LETTER * 1000,
+        quizAnswered: false,
+        answerState: null,
+        select: null
       });
     },
     userSelect(choiceIdx) {
@@ -222,19 +229,11 @@ export default {
         return;
       }
       this.sendSound("question");
-      const idx = state.quizIndices[nextNo - 1];
-      const quiz = QUIZZES[idx];
-      const [choices, answerIdx] = shuffleChoices(quiz);
       this.$whim.assignState({
-        quizNo: nextNo,
-        question: quiz.question,
-        answerIdx: answerIdx,
-        choices: choices,
-        timeBegin: new Date().getTime(),
-        quizAnswered: false,
-        answerState: null,
-        select: null
+        quizNo: nextNo
       });
+      const idx = state.quizIndices[nextNo - 1];
+      this.setQuiz(idx);
       // this.question = ''
       // setTimeout(this.generateQuestion, 1000);
       // const orderedChoices = quiz.slice(1)
