@@ -8208,10 +8208,10 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-whim-client-vue@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/whim-client-vue/-/whim-client-vue-1.2.3.tgz#7618b0c657e7b463ea6a79929c34afb1534db15e"
-  integrity sha512-w3sKWxVMFNr5FCGyxhp5xQANeqbHw+lZ8MQAs/J0CxZjDqKrFQywx93oK9veP8rMwRfLl1/J85CB5UrQZ8HnFQ==
+whim-client-vue@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/whim-client-vue/-/whim-client-vue-1.2.8.tgz#b0b4eb13ee2983e3c8e794db8e2b6a2d895e45d9"
+  integrity sha512-rng2Qp3cGPppby8Czgu7gpeYF6VsOriiMTyxo6D5UZQ5IhYtaMcdLFCxrPf8T3qWIJdffpyVZEOsmwxWRwvMzQ==
   dependencies:
     vuex "^3.1.3"
 
