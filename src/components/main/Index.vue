@@ -163,7 +163,7 @@ export default {
         points[user.id] = 0;
       }
       this.$whim.assignState({
-        nQuizzes: this.nQuizzes,
+        nQuizzes: Number(this.nQuizzes),
         quizNo: 1,
         quizIndices: quizIndices,
         points: points
@@ -396,8 +396,10 @@ export default {
 /* カードを中央に配置している */
 .card {
   background: #fff;
-  height: 240px;
-  width: 320px;
+  height: 30vh;
+  max-height: 240px;
+  width: 80vw;
+  max-width: 320px;
   opacity: 0.85;
   position: relative;
   text-align: center;

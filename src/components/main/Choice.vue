@@ -20,7 +20,8 @@ export default {
   border-radius: 5px;
   font-weight: bold;
   background: rgba(256, 256, 256, 0.9);
-  width: 250px;
+  width: 60vw;
+  max-width: 250px;
   cursor: pointer;
   position: relative;
   left: 50%;
