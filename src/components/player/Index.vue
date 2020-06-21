@@ -2,11 +2,13 @@
   <div class="container">
     <div class="player">
       <div v-if="phase === 'setting'"></div>
-      <div
-        v-else-if="phase === 'playing' && isMe"
-        class="choice-box"
-        :class="side"
-      ></div>
+    </div>
+    <div
+      class="choice-box"
+      :class="whimPositionClass(displayUser)"
+      v-if="!isMe && quizAnswered && choice !== undefined"
+    >
+      <p>{{ choice }}</p>
     </div>
     <Point :point="point" :displayUser="displayUser" />
     <img
@@ -26,9 +28,6 @@
 </template>
 
 <script>
-// import { shuffleChoices } from "../../utils/shuffle";
-// const QUIZZES = require("@/assets/quizzes.json").quizzes;
-
 export default {
   name: "Player",
   props: {
@@ -39,20 +38,11 @@ export default {
     Rank: () => import("@/components/player/Rank")
   },
   computed: {
-    accessUserId() {
-      return this.$whim.accessUser.id;
-    },
     isMe() {
-      return this.displayUser.id === this.accessUserId;
-    },
-    users() {
-      return this.$whim.users;
+      return this.displayUser.id === this.$whim.accessUser.id;
     },
     state() {
       return this.$whim.state;
-    },
-    select() {
-      return this.$whim.state.select || {};
     },
     answerState() {
       return this.$whim.state.answerState || {};
@@ -90,15 +80,9 @@ export default {
       }
       return points.filter(e => e.isPlayer)[0].rank;
     },
-    myAnswerState() {
-      return this.$whim.state.answerState[this.accessUserId];
-    },
-    side() {
-      const ps = this.displayUser.positionNumber;
-      if (ps === 1 || ps === 3) {
-        return "left";
-      }
-      return "right";
+    choice() {
+      const select = (this.$whim.state.select || {})[this.displayUser.id];
+      return (this.$whim.state.choices || {})[select];
     }
   },
   methods: {
@@ -135,15 +119,24 @@ img {
   width: 40%;
 }
 .choice-box {
+  margin: 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  background: rgba(256, 256, 256, 0.9);
+  width: 60vw;
+  max-width: 250px;
+  cursor: pointer;
   position: absolute;
-  top: 50%;
-  &.left {
-    left: 20%;
-    transform: translateY(-50%) translateX(-20%);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10%);
+  p {
+    margin: 0;
+    padding: 15px 10px;
   }
-  &.right {
-    left: 80%;
-    transform: translateY(-50%) translateX(-80%);
+  &.bottom:not(.top) {
+    top: 90%;
+    transform: translateX(-50%) translateY(-90%);
   }
 }
 </style>
