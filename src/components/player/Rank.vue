@@ -16,7 +16,7 @@ export default {
   // height: 800px;
   // float: left;
   position: absolute;
-  height: 80vmin;
+  width: 80vmin;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
