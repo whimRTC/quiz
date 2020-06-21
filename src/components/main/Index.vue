@@ -134,7 +134,7 @@ export default {
     },
     timeLeftRatio() {
       if (this.state.quizAnswered) return 0;
-      return this.timeLeft / TIME_LIMIT;
+      return Math.min(this.timeLeft / TIME_LIMIT, 1);
     },
     question() {
       const q = this.state.question;
