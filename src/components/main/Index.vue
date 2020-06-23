@@ -60,7 +60,7 @@ import { Howl } from "howler";
 
 const QUIZZES = require("@/assets/quizzes.json").quizzes;
 const TIME_LIMIT = 10;
-const SEC_PER_LETTER = 0.25;
+const SEC_PER_LETTER = 0.18;
 const SE_CORRECT = new Howl({
   src: require("@/assets/correct1.mp3")
 });
