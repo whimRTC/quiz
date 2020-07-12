@@ -153,8 +153,9 @@ export default {
       // if (!this.$whim.state.quizReady) return "";
       const q = this.state.question;
       if (this.$whim.state.quizAnswered) return q;
-      const nLettersHidden =
-        Math.ceil((this.timeLeft - TIME_LIMIT) / SEC_PER_LETTER) + 2;
+      const nLettersHidden = Math.ceil(
+        (this.timeLeft - TIME_LIMIT) / SEC_PER_LETTER
+      );
       if (q.length - nLettersHidden < 0) return "";
       return q.slice(0, q.length - nLettersHidden);
     },
