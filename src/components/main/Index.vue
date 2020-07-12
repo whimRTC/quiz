@@ -62,6 +62,7 @@ import axios from "axios";
 const QUIZZES = require("@/assets/quizzes.json").quizzes;
 const TIME_LIMIT = 10;
 const SEC_PER_LETTER = 0.18;
+const WAIT_FOR_READY = 0.5;
 const SE_CORRECT = new Howl({
   src: require("@/assets/correct1.mp3")
 });
@@ -139,6 +140,7 @@ export default {
         this.$whim.assignState({
           quizAnswered: true
         });
+        return 0;
       }
       return t;
     },
@@ -147,9 +149,11 @@ export default {
       return Math.min(this.timeLeft / TIME_LIMIT, 1);
     },
     question() {
+      // if (!this.$whim.state.quizReady) return "";
       const q = this.state.question;
-      if (this.state.quizAnswered) return q;
+      if (this.$whim.state.quizAnswered) return q;
       const nLetters = Math.ceil((this.timeLeft - TIME_LIMIT) / SEC_PER_LETTER);
+      if (q.length - nLetters < 0) return "";
       return q.slice(0, q.length - nLetters);
     },
     champion() {
@@ -194,12 +198,22 @@ export default {
           (await serverTime()) + quiz.question.length * SEC_PER_LETTER * 1000,
         quizAnswered: false,
         answerState: null,
-        select: null
+        select: null,
+        quizReady: false
       });
+      setTimeout(() => {
+        this.$whim.assignState({ quizReady: true });
+      }, WAIT_FOR_READY * 1000);
     },
     userSelect(choiceIdx) {
       const myState = this.answerState[this.accessUserId];
-      if (myState === "correct" || myState === "incorrect") return;
+      if (
+        myState === "correct" ||
+        myState === "incorrect" ||
+        !this.$whim.state.quizReady
+      ) {
+        return;
+      }
       const answerIdx = this.state.answerIdx;
       const state = this.state;
 
