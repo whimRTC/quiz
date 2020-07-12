@@ -57,6 +57,7 @@
 <script>
 import { shuffle, shuffleChoices } from "../../utils/shuffle";
 import { Howl } from "howler";
+import axios from "axios";
 
 const QUIZZES = require("@/assets/quizzes.json").quizzes;
 const TIME_LIMIT = 10;
@@ -74,13 +75,22 @@ const SE_QUESTION = new Howl({
   src: require("@/assets/question1.mp3")
 });
 
+const serverTime = async () => {
+  let time;
+  await axios.head(window.location.href).then(res => {
+    time = new Date(res.headers.date);
+  });
+  return time.getTime();
+};
+
 export default {
   name: "Main",
   data: function() {
     return {
       nQuizzes: 10,
       nQuizzesChoices: [5, 10, 20],
-      now: new Date().getTime(),
+      now: null,
+      delta: 0,
       timeBegin: undefined,
       TIME_LIMIT
     };
@@ -170,7 +180,7 @@ export default {
       });
       this.setQuiz(quizIndices[0]);
     },
-    setQuiz(idx) {
+    async setQuiz(idx) {
       const quiz = QUIZZES[idx];
       this.sendSound("question");
 
@@ -181,7 +191,7 @@ export default {
         answerIdx: answerIdx,
         choices,
         timeBegin:
-          new Date().getTime() + quiz.question.length * SEC_PER_LETTER * 1000,
+          (await serverTime()) + quiz.question.length * SEC_PER_LETTER * 1000,
         quizAnswered: false,
         answerState: null,
         select: null
@@ -284,11 +294,12 @@ export default {
       });
     }
   },
-  mounted() {
+  async mounted() {
     setInterval(() => {
-      this.now = new Date().getTime();
+      this.now = new Date().getTime() + this.delta;
     }, 10);
     this.$whim.assignState({ phase: "setting" });
+    this.delta = (await serverTime()) - new Date().getTime();
   }
 };
 </script>
