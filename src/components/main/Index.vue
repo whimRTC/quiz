@@ -57,7 +57,7 @@
 <script>
 import { shuffle, shuffleChoices } from "../../utils/shuffle";
 import { Howl } from "howler";
-import axios from "axios";
+// import axios from "axios";
 
 const QUIZZES = require("@/assets/quizzes.json").quizzes;
 const TIME_LIMIT = 10;
