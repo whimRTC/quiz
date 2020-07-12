@@ -77,11 +77,12 @@ const SE_QUESTION = new Howl({
 });
 
 const serverTime = async () => {
-  let time;
-  await axios.head(window.location.href).then(res => {
-    time = new Date(res.headers.date);
-  });
-  return time.getTime();
+  return new Date().getTime();
+  // let time;
+  // await axios.head(window.location.href).then(res => {
+  //   time = new Date(res.headers.date);
+  // });
+  // return time.getTime();
 };
 
 export default {
